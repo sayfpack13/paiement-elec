@@ -6,32 +6,25 @@ const app=express()
 const host="localhost"
 const port=8080
 var site_settings={};
-var pool;
+const      pool=mysql.createPool({
+    host     : 'remotemysql.com',
+    port     :  3306,
+    user     : 'p9N3diyQi3',
+    password : '9JUBw3qtNo',
+    database : 'p9N3diyQi3',
+})
 
-// used for temp usage
-var object={};
-var msg="";
+
 
 
 init()
 
 function init(){
-    // mysql
-     pool=mysql.createPool({
-        host:host,
-        user:"root",
-        password:"",
-        database:"cloudy"
-    })
  
     pool.getConnection((err,conn)=>{
-        if(err) throw err
-        conn.query("select * from settings;",(err,rows)=>{
-            conn.release()
-            
-            if(!err){
-                site_settings=rows[0];
-            }
+        pool.query("select * from settings;",(err,rows)=>{
+
+            site_settings=rows[0]
         })
     })
 
@@ -52,13 +45,14 @@ app.listen(port,()=>{
 
 
 
-get_xmlRequest("/site_settings",(req,ses)=>{
+app.get("/site_settings",(req,ses)=>{
     ses.write(JSON.stringify(site_settings))
+    ses.end()
 })
 
 
 
-get_xmlRequest("/signin",(req,ses)=>{
+app.get("/signin",(req,ses)=>{
     var username=req.query.username;
     var password=req.query.password;
 
@@ -73,6 +67,7 @@ get_xmlRequest("/signin",(req,ses)=>{
                 if(rows.length==0){
                     ses.write("Wrong password !!")
                 }else{
+                    
                     ses.write(JSON.stringify(rows[0]));
                 }
                 ses.end();
@@ -87,13 +82,14 @@ get_xmlRequest("/signin",(req,ses)=>{
 
 
 
-
+/*
 function get_xmlRequest(path,callback){
     app.get(path,(req,ses)=>{
         if(check_api(req)){
              callback(req,ses);
         }else{
             ses.write("Wrong API KEY !!");
+            ses.end()
         }
        
     })
@@ -106,4 +102,5 @@ function check_api(req){
     else
     return true
 }
+*/
 
