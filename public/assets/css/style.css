@@ -1,0 +1,263 @@
+/* INDEX CONTAINER */
+#container{
+	margin-top: 20px;
+}
+body{
+	margin:0;
+}
+/* INDEX CONTAINER */
+
+/* GENERAL */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.ripple-btn {
+	position: relative;
+	overflow: hidden;
+	transition: background 400ms;
+
+	font-family: 'Roboto', sans-serif;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); /* black with 30% opacity */
+	cursor: pointer;
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+
+
+.ripple-btn.blue{
+	float: right;
+	color: #fff;
+	background-color: #1a73e8;
+	border-color:#fff;
+	border: 3px solid #135fc2;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	padding:20px;
+	
+	transition:0.5s;
+}
+.ripple-btn.blue:hover{
+	background-color: #ffffff40;
+	
+	transition:0.5s;
+}
+.ripple-btn.blue.active{
+	background-color: #04AA6D;
+}
+.ripple-btn.blue.active:hover{
+	background-color: #02c17a;
+}
+
+.ripple-btn.white{
+	float: right;
+	color: #1a73e8;
+	background-color: #fff;
+	border-color:#1a73e8;
+	border: 3px solid #135fc2;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	padding:20px;
+	
+	transition:0.5s;
+}
+.ripple-btn.white:hover{
+	color: #fff;
+	background-color: #1a73e8c4;
+	
+	transition:0.5s;
+}
+.ripple-btn.white.active{
+	background-color: #04AA6D;
+}
+.ripple-btn.white.active:hover{
+	background-color: #02c17a;
+}
+
+
+.fieldset{
+	width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+	
+	border: 5px solid #135fc2;
+	border-radius: 15px;
+	
+	padding-bottom:40px;
+}
+.fieldset legend{
+	font-size:50px;
+	font-weight:bold;
+	color:#135fc2;
+}
+.fieldset h1{
+	font-size:70px;
+	font-weight:bold;
+	color:#5e5e5e;
+	
+	margin:0;
+	margin-bottom:30px;
+}
+
+.fieldset input{
+	outline:none;
+	padding: 10px;
+	font-size: 1rem;
+	border: 3px solid #838383;
+	background: transparent;
+	border-radius: 10px;
+	
+	transition:0.5s;
+
+}
+.fieldset input:focus{
+	outline: none;
+	border: 3px solid #1a73e8;
+	
+	transition:0.5s;
+}
+.fieldset input:focus ~ label,
+.fieldset input:valid ~ label,
+.fieldset input:not([value=""]) ~ label{
+	top: -10px;
+	left: 12px;
+	background-color:#fff;
+	
+	transition: 0.5s;
+}
+
+
+
+.fieldset label {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: #404040;
+	pointer-events: none;
+	
+	font-size: 20px;
+	transition: 0.5s;
+}
+
+
+
+.error-container{
+	color:#fff;
+	font-size: 30px;
+	background-color: #135fc2;
+	display: none;
+	margin-bottom: 20px;
+}
+
+
+
+
+/* GENERAL */
+
+
+
+/*	header.php	*/
+#header{
+	margin:0;
+}
+
+
+
+.navbar .ripple-btn{
+	margin-left:20px;
+}
+.navbar li .site-name{
+	float: left;
+	color:#fff;
+	
+	font-size:40px;
+	margin:0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	border-radius:15px;
+
+	
+	transition:0.2s;
+}
+.navbar li .site-name:hover{
+	background-color:#ffffff40 !important;
+	
+	transition:0.2s;
+}
+
+
+
+
+.navbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 30px 5px 30px;
+	overflow: hidden;
+	box-shadow: 0 3px 4px 0 rgb(0 0 0 / 20%), 0 3px 3px -2px rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+	background-color: #1a73e8;
+	position: relative;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+	
+	
+}
+
+
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+
+/*	header.php	*/
+
+
+
+
+
+/* signin.php */
+
+
+
+.sign-in form{
+	display:inline-grid;
+}
+.sign-in form .input{
+	position:relative;
+}
+
+.sign-in .input{
+	margin-bottom: 20px;
+}
+
+.sign-in button{
+margin-top:20px;	
+}
+/* signin.php */
