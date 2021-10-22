@@ -16,7 +16,7 @@ body{
 .ripple-btn {
 	position: relative;
 	overflow: hidden;
-	transition: background 400ms;
+	transition: 0.5s;
 
 	font-family: 'Roboto', sans-serif;
 	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); /* black with 30% opacity */
@@ -42,7 +42,6 @@ span.ripple {
 
 
 .ripple-btn.blue{
-	float: right;
 	color: #fff;
 	background-color: #1a73e8;
 	border-color:#fff;
@@ -66,7 +65,6 @@ span.ripple {
 }
 
 .ripple-btn.white{
-	float: right;
 	color: #1a73e8;
 	background-color: #fff;
 	border-color:#1a73e8;
@@ -168,12 +166,15 @@ span.ripple {
 
 
 
-
+.navbar div{
+	float:right;
+	display:flex;
+}
 /* GENERAL */
 
 
 
-/*	header.php	*/
+/*	header	*/
 #header{
 	margin:0;
 }
@@ -182,6 +183,7 @@ span.ripple {
 
 .navbar .ripple-btn{
 	margin-left:20px;
+	float:right;
 }
 .navbar li .site-name{
 	float: left;
@@ -236,13 +238,13 @@ span.ripple {
 
 
 
-/*	header.php	*/
+/*	header	*/
 
 
 
 
 
-/* signin.php */
+/* signin */
 
 
 
@@ -260,4 +262,20 @@ span.ripple {
 .sign-in button{
 margin-top:20px;	
 }
-/* signin.php */
+/* signin */
+
+
+
+
+
+
+
+
+/* user header */
+.header-avatar{
+	border-radius: 50%;
+	width: 70px;
+}
+
+
+/* user header */

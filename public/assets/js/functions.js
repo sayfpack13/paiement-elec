@@ -96,3 +96,12 @@ function error_msg(msg){
   error_container.innerHTML=msg;
   error_container.style.display="block";
 }
+
+
+
+
+function logout(){
+  localStorage.clear();
+  loadPage(header,"header.html");
+  loadPage(container,"home.html");
+}
