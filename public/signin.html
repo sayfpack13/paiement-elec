@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<title>Sign in</title>
+
+<script src="assets/js/signin.js"></script>
+</head>
+<body>
+
+<fieldset class="fieldset sign-in">
+<div>
+<legend>Sign In</legend>
+<h1 id="site-name"></h1>
+<div class="error-container">test</div>
+</div>
+
+<form action="javascript:void(0);">
+
+<div class="input">
+<input type="text" id="username" value="" required onkeyup="this.setAttribute('value', this.value);"></input>
+<label>Username</label>
+</div>
+<div class="input">
+<input type="password" id="password" value="" required onkeyup="this.setAttribute('value', this.value);"></input>
+<label>Password</label>
+</div>
+
+<button class="ripple-btn white" onClick="signin();">Sign in</button>
+</form>
+
+</fieldset>
+
+</body>
+</html>
+
