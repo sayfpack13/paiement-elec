@@ -43,7 +43,20 @@ function loadPage(container,page)
 function loadJSFiles(container){
 	var scripts=container.getElementsByTagName("script");
 	
+
+  var head_scripts=document.head.getElementsByTagName("script");
+  var head_scripts_src=[];
+
+for(script of head_scripts){
+  head_scripts_src.push(script.src);
+}
+
 	for (var script of scripts){
+    // if scripts exist remove it so we can re-add it later
+    if(head_scripts_src.includes(script.src)){
+      head_scripts[head_scripts_src.indexOf(script.src)].remove();
+    }
+
 		var n_script=document.createElement("script");
 		n_script.src=script.src;
 		document.head.appendChild(n_script);
@@ -54,7 +67,6 @@ function loadJSFiles(container){
 	// add ripple effect
 	init_ripple();
 }
-
 
 
 
@@ -96,6 +108,7 @@ function error_msg(msg){
   error_container.innerHTML=msg;
   error_container.style.display="block";
 }
+
 
 
 
