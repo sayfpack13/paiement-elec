@@ -1,8 +1,7 @@
 /* INDEX CONTAINER */
 #container{
 	position: relative;
-	padding-top: 100px;
-	padding-bottom: 1px;
+	padding-top: 85px;
 	z-index: 1;
 
 	transition: 1s;
@@ -182,7 +181,7 @@ span.ripple {
 
 
 
-.navbar div{
+.navbar .user-rightside{
 	float:right;
 	display:flex;
 }
@@ -199,17 +198,11 @@ span.ripple {
 
 .navbar .ripple-btn{
 	margin-left:20px;
-	float:right;
 }
 .navbar li .site-name{
-	float: left;
 	color:#fff;
 	
 	font-size:40px;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
 	border-radius:15px;
 
 	
@@ -320,22 +313,21 @@ transition: 1s;
 
 
 
-
+.navbar .user-leftside{
+	float:left;
+	display: flex;
+	align-items: center;
+}
 .navbar .menu-icon {
 	display: inline-block;
 	cursor: pointer;
-	width:40px;
 	margin: 0;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
   }
   .navbar .menu-icon .bar1, .bar2, .bar3 {
-	width: 35px;
+	width: 40px;
 	height: 5px;
 	background-color: rgba(255, 255, 255, 0.8);
-	margin: 3px 0;
+	margin: 5px 0;
 	transition: 0.4s;
   }
   
@@ -354,6 +346,88 @@ transition: 1s;
 
 
 
-
+.navbar .user-leftside .ripple-btn{
+	font-size: 20px;
+    padding: 10px;
+	margin-left: 0px;
+}
 
 /* user header */
+
+
+
+
+/* user home */
+.project-selector{
+	justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+.project-selector .background{
+	background-color: #bbbbbbb7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.project-selector .selector{
+	background-color: #ffffff;
+	justify-content: center;
+    position: relative;
+    height: 80%;
+    width: 50%;
+	margin-top: 85px;
+
+	border-radius: 20px;
+	box-shadow: 0 0 10px 10px #bbb;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.project-selector hr{
+	height: 3px;
+	width: 100%;
+	background-color: #bbb;
+	margin-bottom: 10;
+}
+.project-selector .selector-header{
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+.project-selector .selector-header h1{
+	float: left;
+	margin: 10px;
+}
+.project-selector .selector-header button{
+	float: right;
+	padding: 15px;
+}
+.project-selector .selector-table{
+	height: inherit;
+}
+
+
+.project-selector .selector-table .selection{
+	width: 40px;
+	height: 40px;
+}
+.project-selector .selector-table th{
+	
+	text-align: left;
+}
+	
+.project-selector .selector-table tbody{
+	display: block;
+	overflow: auto;
+}
+tr{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+/* user home */

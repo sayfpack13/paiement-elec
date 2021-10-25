@@ -23,6 +23,9 @@ function xmlRequest(url,callback) {
 // PAGE LODER
 function loadPage(container,page)
 {
+  // remove react DOM components
+  ReactDOM.unmountComponentAtNode(container)
+
   const xmlhttp=new XMLHttpRequest();
 
 
@@ -39,6 +42,14 @@ function loadPage(container,page)
    xmlhttp.open("GET",page,true);
    xmlhttp.send();
 }
+
+// Jquery PAGE LOADER
+function loadPage2(container,page){
+  $(container).load(page);
+  loadJSFiles(container);
+}
+
+
 
 function loadJSFiles(container){
 	var scripts=container.getElementsByTagName("script");
@@ -57,12 +68,18 @@ for(script of head_scripts){
       head_scripts[head_scripts_src.indexOf(script.src)].remove();
     }
 
+  
 		var n_script=document.createElement("script");
+    if(script.type!="")
+      n_script.type=script.type;
+      
 		n_script.src=script.src;
+
 		document.head.appendChild(n_script);
 		eval(n_script);
 		script.remove();
 	}
+
 
 	// add ripple effect
 	init_ripple();
